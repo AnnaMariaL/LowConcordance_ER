@@ -1,0 +1,73 @@
+#!/bin/bash
+
+########################
+########################
+#Author: Anna Maria Langmüller 
+#Year: 2020
+#Department: Vetmed University Vienna, Department of Population Genetics
+#Project: Low concordance of short-term and long-term selection responses in experimental Drosophila populations
+#Purpose: Pipeline forward simulations
+
+########################
+########################
+
+#Step 1 : create MimicrEE2 haplotype file with the 189 ancestral haplotypes
+R -f 01_haplotypeFileCreation.R
+
+#Step 2: pick selected SNPs
+R -f 02_choosingSNPsperHaplotypeBlock.R
+
+#Step 3: run forward simulations with MimicrEE2 (60 generations, 10 replicates)
+./03_MimicrEE
+
+#Step 4: split + sort sync-file to match empirical analysis & calculate counts + frequencies of rising allele
+#compute_aF_cov_Ne.py: original python file by Neda Barghi, adapted to have additional parameter generation
+./04_sortSync.sh
+
+#Step 5: add Pool-Seq sampling noise to the data 
+R -f 05_samplingNoise.R
+
+#Step 6: estimate effective population size 
+R -f 06_estimateNe.R
+
+#Step 7: calculate CMH test 
+./07_CMH
+
+#Step 8: generate + run a script to prepare replicate-specific sync files (--> needed for Fisher's Exact Test)
+./08_SyncSplitFET
+
+#Step 9: calculate Fisher's Exact Test
+./09_FET
+
+#Step 10: perform neutral simulations for the p-value distribution of the CMH test
+R -f 10_simCMH.R
+
+#Step 11: conduct the CMH test on the simulated data 
+./11_simCMH
+
+#Step 12: calculate FDR for CMH
+R -f 12_FDR_CMH.R
+
+#Step 13: perform neutral simulations for the p-value distribution of the FET test 
+R -f 13_simFET.R
+
+#Step 14: conduct the FET test on the simulated data
+./14_simFET
+
+#Step 15: calculate FDR for FET
+R -f 15_FDR_FET.R 
+
+#Step 16: determine candidates 
+R -f 16_candidates.R
+
+#Step 17: determine candidate windows 
+R -f 17_candidate_windows.R
+
+#Step 18: robustness of SNP ranking in candidate windows
+R -f 18_AUC_windows.R
+
+#Step 19: properties of the candidates
+R -f 19_analysis_candidates.R
+
+#Step 20: simulation without linkage, "winner's curse"
+R -f 20_sim_winners_curse.R

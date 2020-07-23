@@ -1,0 +1,32 @@
+#!/bin/bash
+
+########################
+########################
+#Author: Anna Maria Langmüller 
+#Year: 2020
+#Department: Vetmed University Vienna, Department of Population Genetics
+#Project: Low concordance of short-term and long-term selection responses in experimental Drosophila populations
+#Purpose: generate replicate specific sync-files 
+
+########################
+########################
+echo '#!/bin/bash' > 08_SyncSplitFET_list
+cd ../data_sim
+
+#generate single sync files with only one replicate for FET
+for i in DsimFl_20200109-SNPSet01_hemizygousX-ds80x_F0F10-ordered_CovSampled.sync DsimFl_20200109-SNPSet01_hemizygousX-ds80x_F0F20-ordered_CovSampled.sync DsimFl_20200109-SNPSet01_hemizygousX-ds80x_F0F30-ordered_CovSampled.sync DsimFl_20200109-SNPSet01_hemizygousX-ds80x_F0F40-ordered_CovSampled.sync DsimFl_20200109-SNPSet01_hemizygousX-ds80x_F0F50-ordered_CovSampled.sync DsimFl_20200109-SNPSet01_hemizygousX-ds80x_F0F60-ordered_CovSampled.sync; do
+	echo "cut -f 1-4,14 $i > " ${i%.sync}"_Rep1.sync">> ../src_sim/08_SyncSplitFET_list
+	echo "cut -f 1-3,5,15 $i > " ${i%.sync}"_Rep2.sync" >> ../src_sim/08_SyncSplitFET_list
+	echo "cut -f 1-3,6,16 $i > " ${i%.sync}"_Rep3.sync" >> ../src_sim/08_SyncSplitFET_list
+	echo "cut -f 1-3,7,17 $i > " ${i%.sync}"_Rep4.sync" >> ../src_sim/08_SyncSplitFET_list
+	echo "cut -f 1-3,8,18 $i > " ${i%.sync}"_Rep5.sync" >> ../src_sim/08_SyncSplitFET_list
+	echo "cut -f 1-3,9,19 $i > " ${i%.sync}"_Rep6.sync" >> ../src_sim/08_SyncSplitFET_list
+	echo "cut -f 1-3,10,20 $i > " ${i%.sync}"_Rep7.sync" >> ../src_sim/08_SyncSplitFET_list
+	echo "cut -f 1-3,11,21 $i > " ${i%.sync}"_Rep8.sync" >> ../src_sim/08_SyncSplitFET_list
+	echo "cut -f 1-3,12,22 $i > " ${i%.sync}"_Rep9.sync" >> ../src_sim/08_SyncSplitFET_list
+	echo "cut -f 1-3,13,23 $i > " ${i%.sync}"_Rep10.sync" >> ../src_sim/08_SyncSplitFET_list
+done
+
+cd ../src_sim
+chmod +x 08_SyncSplitFET_list
+./08_SyncSplitFET_list

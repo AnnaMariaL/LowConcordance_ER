@@ -1,0 +1,20 @@
+#!/bin/bash
+########################
+########################
+#Author: Anna Maria Langmüller 
+#Year: 2020
+#Department: Vetmed University Vienna, Department of Population Genetics
+#Project: Low concordance of short-term and long-term selection responses in experimental Drosophila populations
+#Purpose: run MimicrEE2
+
+########################
+########################
+#add sexInfo
+paste SexHeaderN300.txt Dsim_FL_189Ancestral_wholeGenome-N300.modified.tab > Dsim_FL_189Ancestral_wholeGenome-N300.modified.sex.tab
+
+#Run MimicrEE2
+java -jar mim2-v206.jar w --haplotypes-g0 ../data_sim/Dsim_FL_189Ancestral_wholeGenome-N300.modified.sex.tab --recombination-rate ../data_emp/dsim.rr_LDjump-LOESS-0.1-sex-mimicree2.txt --sex ../data_sim/SexInfo.txt --snapshots-sync 0,10,20,30,40,50,60 --replicate-runs 10 --output-sync ../data_sim/DsimFl_20200109-SNPSet01_hemizygousX.sync --fitness ../data_sim/SNPSet.snp --detailed-log
+
+#Downsample sync
+gunzip < ../data_sim/DsimFl_20200109-SNPSet01_hemizygousX.sync > ../data_sim/DsimFl_20200109-SNPSet01_hemizygousX-unzipped.sync
+perl popoolation2-code/subsample-synchronized.pl --input ../data_sim/DsimFl_20200109-SNPSet01_hemizygousX-unzipped.sync --output ../data_sim/DsimFl_20200109-SNPSet01_hemizygousX-unzipped-ds80x.sync --target-coverage 80 --max-coverage 10000 --method fraction
