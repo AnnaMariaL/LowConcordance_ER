@@ -1,0 +1,66 @@
+#!/bin/bash
+
+########################
+########################
+#Author: Anna Maria Langmüller 
+#Year: 2020
+#Department: Vetmed University Vienna, Department of Population Genetics
+#Project: Low concordance of short-term and long-term selection responses in experimental Drosophila populations
+#Purpose: Pipeline forward simulations, empirical data 
+
+########################
+########################
+#Step 1: split sync files
+./01_splitSync.sh
+
+#Step 2: estimate Ne 
+
+R -f 06_estimateNe.R
+
+#Step 3: calculate CMH test 
+./03_CMH_empirical.sh
+
+#Step 4: generate  replicate-specific sync files (--> needed for Fisher's Exact Test)
+./04_splitSyncs
+
+#Step 5: calculate Fisher's Exact Test
+./05_calculate.FET.sh
+
+#Step 6: perform neutral simulations for the p-value distribution of the CMH test
+R -f 06_simCMH.R
+
+#Step 07: conduct the CMH test on the simulated data 
+./07_simulated-CMH
+
+#Step 08: calculate FDR for CMH
+R -f 08_FDR_CMH.R
+
+#Step 09: perform neutral simulations for the p-value distribution of the FET test 
+R -f 09_simFET.R
+
+#Step 10: conduct the FET test on the simulated data
+./10_simulated-FET.sh
+
+#Step 11: calculate FDR for FET
+R -f 11_FDR_FET.R 
+
+#Step 12: determine candidates 
+R -f 12_candidates.R
+
+#Step 13: determine candidate windows 
+R -f 13_candidate_windows.R
+
+#Step 14: robustness of SNP ranking in candidate windows
+R -f 14_AUC_windows.R
+
+#Step 15: HADR analysis
+R -f 15_HADR.R
+
+#Step 16: haplotype block analysis: EDHA vs. non-EDHA
+R -f 16_EDHA.R
+
+#Step 17: candidate analysis (SNP + window): similarity measurement
+R -f 17_analysis_candidates.R
+
+#Step 18: check the amount of SNPs that get fixed during the experiment 
+R -f 18_segregating_SNPs.R

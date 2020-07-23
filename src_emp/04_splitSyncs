@@ -1,0 +1,74 @@
+#!/bin/bash
+
+########################
+########################
+#Author: Anna Maria Langmüller 
+#Year: 2020
+#Department: Vetmed University Vienna, Department of Population Genetics
+#Project: Low concordance of short-term and long-term selection responses in experimental Drosophila populations
+#Purpose: Create replicate - specific syncs
+
+########################
+########################
+########################
+cd ../data_emp
+cut -f 1-4,14 F0F10SNP.sync >  F0F10SNP_Rep1.sync
+cut -f 1-3,5,15 F0F10SNP.sync >  F0F10SNP_Rep2.sync
+cut -f 1-3,6,16 F0F10SNP.sync >  F0F10SNP_Rep3.sync
+cut -f 1-3,7,17 F0F10SNP.sync >  F0F10SNP_Rep4.sync
+cut -f 1-3,8,18 F0F10SNP.sync >  F0F10SNP_Rep5.sync
+cut -f 1-3,9,19 F0F10SNP.sync >  F0F10SNP_Rep6.sync
+cut -f 1-3,10,20 F0F10SNP.sync >  F0F10SNP_Rep7.sync
+cut -f 1-3,11,21 F0F10SNP.sync >  F0F10SNP_Rep8.sync
+cut -f 1-3,12,22 F0F10SNP.sync >  F0F10SNP_Rep9.sync
+cut -f 1-3,13,23 F0F10SNP.sync >  F0F10SNP_Rep10.sync
+cut -f 1-4,14 F0F20SNP.sync >  F0F20SNP_Rep1.sync
+cut -f 1-3,5,15 F0F20SNP.sync >  F0F20SNP_Rep2.sync
+cut -f 1-3,6,16 F0F20SNP.sync >  F0F20SNP_Rep3.sync
+cut -f 1-3,7,17 F0F20SNP.sync >  F0F20SNP_Rep4.sync
+cut -f 1-3,8,18 F0F20SNP.sync >  F0F20SNP_Rep5.sync
+cut -f 1-3,9,19 F0F20SNP.sync >  F0F20SNP_Rep6.sync
+cut -f 1-3,10,20 F0F20SNP.sync >  F0F20SNP_Rep7.sync
+cut -f 1-3,11,21 F0F20SNP.sync >  F0F20SNP_Rep8.sync
+cut -f 1-3,12,22 F0F20SNP.sync >  F0F20SNP_Rep9.sync
+cut -f 1-3,13,23 F0F20SNP.sync >  F0F20SNP_Rep10.sync
+cut -f 1-4,14 F0F30SNP.sync >  F0F30SNP_Rep1.sync
+cut -f 1-3,5,15 F0F30SNP.sync >  F0F30SNP_Rep2.sync
+cut -f 1-3,6,16 F0F30SNP.sync >  F0F30SNP_Rep3.sync
+cut -f 1-3,7,17 F0F30SNP.sync >  F0F30SNP_Rep4.sync
+cut -f 1-3,8,18 F0F30SNP.sync >  F0F30SNP_Rep5.sync
+cut -f 1-3,9,19 F0F30SNP.sync >  F0F30SNP_Rep6.sync
+cut -f 1-3,10,20 F0F30SNP.sync >  F0F30SNP_Rep7.sync
+cut -f 1-3,11,21 F0F30SNP.sync >  F0F30SNP_Rep8.sync
+cut -f 1-3,12,22 F0F30SNP.sync >  F0F30SNP_Rep9.sync
+cut -f 1-3,13,23 F0F30SNP.sync >  F0F30SNP_Rep10.sync
+cut -f 1-4,14 F0F40SNP.sync >  F0F40SNP_Rep1.sync
+cut -f 1-3,5,15 F0F40SNP.sync >  F0F40SNP_Rep2.sync
+cut -f 1-3,6,16 F0F40SNP.sync >  F0F40SNP_Rep3.sync
+cut -f 1-3,7,17 F0F40SNP.sync >  F0F40SNP_Rep4.sync
+cut -f 1-3,8,18 F0F40SNP.sync >  F0F40SNP_Rep5.sync
+cut -f 1-3,9,19 F0F40SNP.sync >  F0F40SNP_Rep6.sync
+cut -f 1-3,10,20 F0F40SNP.sync >  F0F40SNP_Rep7.sync
+cut -f 1-3,11,21 F0F40SNP.sync >  F0F40SNP_Rep8.sync
+cut -f 1-3,12,22 F0F40SNP.sync >  F0F40SNP_Rep9.sync
+cut -f 1-3,13,23 F0F40SNP.sync >  F0F40SNP_Rep10.sync
+cut -f 1-4,14 F0F50SNP.sync >  F0F50SNP_Rep1.sync
+cut -f 1-3,5,15 F0F50SNP.sync >  F0F50SNP_Rep2.sync
+cut -f 1-3,6,16 F0F50SNP.sync >  F0F50SNP_Rep3.sync
+cut -f 1-3,7,17 F0F50SNP.sync >  F0F50SNP_Rep4.sync
+cut -f 1-3,8,18 F0F50SNP.sync >  F0F50SNP_Rep5.sync
+cut -f 1-3,9,19 F0F50SNP.sync >  F0F50SNP_Rep6.sync
+cut -f 1-3,10,20 F0F50SNP.sync >  F0F50SNP_Rep7.sync
+cut -f 1-3,11,21 F0F50SNP.sync >  F0F50SNP_Rep8.sync
+cut -f 1-3,12,22 F0F50SNP.sync >  F0F50SNP_Rep9.sync
+cut -f 1-3,13,23 F0F50SNP.sync >  F0F50SNP_Rep10.sync
+cut -f 1-4,14 F0F60SNP.sync >  F0F60SNP_Rep1.sync
+cut -f 1-3,5,15 F0F60SNP.sync >  F0F60SNP_Rep2.sync
+cut -f 1-3,6,16 F0F60SNP.sync >  F0F60SNP_Rep3.sync
+cut -f 1-3,7,17 F0F60SNP.sync >  F0F60SNP_Rep4.sync
+cut -f 1-3,8,18 F0F60SNP.sync >  F0F60SNP_Rep5.sync
+cut -f 1-3,9,19 F0F60SNP.sync >  F0F60SNP_Rep6.sync
+cut -f 1-3,10,20 F0F60SNP.sync >  F0F60SNP_Rep7.sync
+cut -f 1-3,11,21 F0F60SNP.sync >  F0F60SNP_Rep8.sync
+cut -f 1-3,12,22 F0F60SNP.sync >  F0F60SNP_Rep9.sync
+cut -f 1-3,13,23 F0F60SNP.sync >  F0F60SNP_Rep10.sync

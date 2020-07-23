@@ -1,0 +1,25 @@
+#!/bin/bash
+
+########################
+########################
+#Author: Anna Maria Langmüller 
+#Year: 2020
+#Department: Vetmed University Vienna, Department of Population Genetics
+#Project: Low concordance of short-term and long-term selection responses in experimental Drosophila populations
+#Purpose: CMH test forward simulations, empirical data 
+
+########################
+########################
+cd ../data_emp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne230_X_557140independentSNPs_10reps_simulated.sync --output Dsim_Ne230_X_557140independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne237_X_557140independentSNPs_10reps_simulated.sync --output Dsim_Ne237_X_557140independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne239_X_557140independentSNPs_10reps_simulated.sync --output Dsim_Ne239_X_557140independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne245_X_557140independentSNPs_10reps_simulated.sync --output Dsim_Ne245_X_557140independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne257_X_557140independentSNPs_10reps_simulated.sync --output Dsim_Ne257_X_557140independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne260_autosome_4539060independentSNPs_10reps_simulated.sync --output Dsim_Ne260_autosome_4539060independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne261_autosome_4539060independentSNPs_10reps_simulated.sync --output Dsim_Ne261_autosome_4539060independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne262_X_557140independentSNPs_10reps_simulated.sync --output Dsim_Ne262_X_557140independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne266_autosome_4539060independentSNPs_10reps_simulated.sync --output Dsim_Ne266_autosome_4539060independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne269_autosome_4539060independentSNPs_10reps_simulated.sync --output Dsim_Ne269_autosome_4539060independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne278_autosome_4539060independentSNPs_10reps_simulated.sync --output Dsim_Ne278_autosome_4539060independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
+perl ../src_emp/popoolation2/cmh-test.pl --input Dsim_Ne291_autosome_4539060independentSNPs_10reps_simulated.sync --output Dsim_Ne291_autosome_4539060independentSNPs_10reps_simulated.sync.cmh --min-count 10 --min-coverage 1 --max-coverage 1000 --population 1-11,2-12,3-13,4-14,5-15,6-16,7-17,8-18,9-19,10-20 --remove-temp
