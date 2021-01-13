@@ -55,7 +55,7 @@ my.ne<-function(x,my.gen,excludechr4=NULL){
   my.data<-read.data(x)
   ne.estimates<-list()
   for(i in c(1:10)) {
-    ne.estimates[[i]]<-ne.per.rep(y = my.data,r = i,g = my.gen,pop_census = 300,excludechr4 = excludechr4)
+    ne.estimates[[i]]<-ne.per.rep(y = my.data,r = i,g = my.gen,pop_census = 1000,excludechr4 = excludechr4)
     }
   return(ne.estimates)
 }
